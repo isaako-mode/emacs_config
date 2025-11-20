@@ -1,0 +1,1 @@
+("~/project/proxy_server_project/" "~/project/proxy_server_project/ec2_instance/" "~/code-mirror/")
