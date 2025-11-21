@@ -105,3 +105,76 @@
 
 
 
+;; Company is the best Emacs completion system.
+(use-package company
+  :bind (("C-." . company-complete))
+  :custom
+  (company-idle-delay 0) ;; I always want completion, give it to me asap
+  (company-dabbrev-downcase nil "Don't downcase returned candidates.")
+  (company-show-numbers t "Numbers are helpful.")
+  (company-tooltip-limit 10 "The more the merrier.")
+  :config
+  (global-company-mode) ;; We want completion everywhere
+
+  ;; use numbers 0-9 to select company completion candidates
+  (let ((map company-active-map))
+    (mapc (lambda (x) (define-key map (format "%d" x)
+                        `(lambda () (interactive) (company-complete-number ,x))))
+          (number-sequence 0 9))))
+
+;; Flycheck is the newer version of flymake and is needed to make lsp-mode not freak out.
+(use-package flycheck
+  :config
+  (add-hook 'prog-mode-hook 'flycheck-mode) ;; always lint my code
+  (add-hook 'after-init-hook #'global-flycheck-mode))
+
+;; Package for interacting with language servers
+(use-package lsp-mode
+  :commands lsp
+  :config
+  (setq lsp-prefer-flymake nil ;; Flymake is outdated
+        lsp-headerline-breadcrumb-mode nil)) ;; I don't like the symbols on the header a-la-vscode, remove this
+
+(use-package lsp-mode
+  :ensure t
+  :commands (lsp lsp-deferred)
+  :hook ((terraform-mode . lsp-deferred))
+  :config
+  (setq lsp-terraform-ls-prefill-required-fields t))
+
+;;for terraform HCL
+(use-package terraform-mode
+  :ensure t
+  :hook ((terraform-mode . terraform-format-on-save-mode)) ; Automatically format on save
+  :config
+  )
+
+
+(use-package lsp-ui
+  :ensure t
+  :commands lsp-ui-mode
+  :hook (lsp-mode . lsp-ui-mode)
+  :config
+  (setq lsp-ui-sideline-enable t
+        lsp-ui-sideline-show-hover t
+        lsp-ui-doc-enable t))
+
+(use-package npm)
+
+;; go LSP
+(use-package go-mode
+  :ensure t)
+
+(add-hook 'go-mode-hook 'lsp-deferred)
+(add-hook 'go-mode-hook 'subword-mode)
+(add-hook 'before-save-hook 'gofmt-before-save)
+
+(add-hook 'go-mode-hook (lambda ()
+                          (setq tab-width 4)
+                          (flycheck-add-next-checker 'lsp 'go-vet)
+                          (flycheck-add-next-checker 'lsp 'go-staticcheck)))
+
+
+(global-font-lock-mode 1)
+
+

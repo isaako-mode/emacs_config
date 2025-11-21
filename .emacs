@@ -1,3 +1,4 @@
+
 (global-display-line-numbers-mode)
 (setq display-line-numbers-type 'relative)
 
@@ -122,6 +123,12 @@
                         `(lambda () (interactive) (company-complete-number ,x))))
           (number-sequence 0 9))))
 
+;; For terraform HCL auto completion
+(use-package company
+  :ensure t
+  :hook (terraform-mode . company-mode))
+
+
 ;; Flycheck is the newer version of flymake and is needed to make lsp-mode not freak out.
 (use-package flycheck
   :config
@@ -133,8 +140,21 @@
   :commands lsp
   :config
   (setq lsp-prefer-flymake nil ;; Flymake is outdated
-        lsp-headerline-breadcrumb-mode nil)) ;; I don't like the symbols on the header a-la-vscode, remove this if you like them.
+        lsp-headerline-breadcrumb-mode nil)) ;; I don't like the symbols on the header a-la-vscode, remove this
 
+(use-package lsp-mode
+  :ensure t
+  :commands (lsp lsp-deferred)
+  :hook ((terraform-mode . lsp-deferred))
+  :config
+  (setq lsp-terraform-ls-prefill-required-fields t))
+
+;;for terraform HCL
+(use-package terraform-mode
+  :ensure t
+  :hook ((terraform-mode . terraform-format-on-save-mode)) ; Automatically format on save
+  :config
+  )
 
 
 (use-package lsp-ui
