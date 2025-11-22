@@ -149,6 +149,13 @@
   :config
   (setq lsp-terraform-ls-prefill-required-fields t))
 
+
+(use-package lsp-mode
+  :ensure t
+  :commands lsp
+  :config
+  (setq lsp-terraform-ls-bin "terraform-ls"))
+
 ;;for terraform HCL
 (use-package terraform-mode
   :ensure t
@@ -182,6 +189,39 @@
                           (flycheck-add-next-checker 'lsp 'go-staticcheck)))
 
 
-(global-font-lock-mode 1)
+(use-package vterm
+  :ensure t)
 
+;; (use-package vterm
+;;   :ensure t
+;;   :config
+;;   ;; Bindings inside vterm
+;;   (define-key vterm-mode-map (kbd "C-x b") #'switch-to-buffer)
+;;   (define-key vterm-mode-map (kbd "C-x o") #'other-window))
+
+(add-to-list 'load-path "/home/isay/.emacs.d/elpa/dockerfile-mode/dockerfile-mode.el")
+(require 'dockerfile-mode)
+(add-to-list 'auto-mode-alist '("Dockerfile\\'" . dockerfile-mode))
+
+
+
+(defun google-search (query)
+  "Search Google for QUERY."
+  (interactive "sGoogle: ")
+  (browse-url (concat "https://www.google.com/search?q=" (url-hexify-string query))))
+(global-set-key (kbd "C-c g") 'google-search)
+
+;; (use-package engine-mode
+;;   :ensure t
+;;   :config
+;;   (engine-mode t)
+;;   (defengine google
+;;     "https://www.google.com/search?q=%s"
+;;     :keybinding "g"))
+
+
+(global-set-key (kbd "C-c <") 'indent-rigidly-left)
+(global-set-key (kbd "C-c >") 'indent-rigidly-right)
+
+(global-font-lock-mode 1)
 
