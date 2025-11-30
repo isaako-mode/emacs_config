@@ -1,1 +1,1 @@
-("~/project/proxy_server_project/" "~/project/proxy_server_project/ec2_instance/" "~/emacs_config_repo/" "~/code-mirror/")
+("~/project/proxy_server_project/" "~/code-mirror/" "~/project/proxy_server_project/ec2_instance/" "~/emacs_config_repo/")

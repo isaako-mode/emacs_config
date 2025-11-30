@@ -128,6 +128,20 @@
   :ensure t
   :hook (terraform-mode . company-mode))
 
+;; For Golang auto completion
+(use-package company
+  :ensure t
+  :hook (go-mode . company-mode))
+
+(use-package company-go
+  :after company
+  :hook (go-mode . (lambda ()
+                     (set (make-local-variable 'company-backends) '(company-go)))))
+
+(use-package company
+  :config
+  (global-company-mode)
+  (setq company-backends '(company-capf)))
 
 ;; Flycheck is the newer version of flymake and is needed to make lsp-mode not freak out.
 (use-package flycheck
@@ -149,7 +163,7 @@
   :config
   (setq lsp-terraform-ls-prefill-required-fields t))
 
-
+;; terraform lsp support
 (use-package lsp-mode
   :ensure t
   :commands lsp
@@ -162,6 +176,24 @@
   :hook ((terraform-mode . terraform-format-on-save-mode)) ; Automatically format on save
   :config
   )
+
+
+;;for golang
+(use-package lsp-mode
+  :hook ((go-mode . lsp))
+  :commands lsp)
+
+
+;;For Python
+(use-package lsp-mode
+  :hook ((python-mode . lsp))
+  :commands lsp)
+
+(use-package company
+  :config
+  (global-company-mode)
+  (setq company-backends '(company-capf)))
+
 
 
 (use-package lsp-ui
@@ -220,8 +252,23 @@
 ;;     :keybinding "g"))
 
 
-(global-set-key (kbd "C-c <") 'indent-rigidly-left)
-(global-set-key (kbd "C-c >") 'indent-rigidly-right)
+;; tab/untab key bindings
+(global-set-key (kbd "C-c <") 'indent-rigidly-left-to-tab-stop)
+(global-set-key (kbd "C-c >") 'indent-rigidly-right-to-tab-stop)
+
+;;Comment/uncomment region key bindings
+(global-set-key (kbd "C-c /") 'comment-region)
+(global-set-key (kbd "C-c ?") 'uncomment-region)
+
+
 
 (global-font-lock-mode 1)
 
+;;Function for switching to different windows backwards
+(defun other-window-backward ()
+  "Move to previous window"
+  (interactive)
+  (other-window -1))
+
+;;Other window Binding
+(global-set-key (kbd "C-x O") 'other-window-backward)

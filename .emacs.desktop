@@ -1,0 +1,187 @@
+;; -*- mode: emacs-lisp; lexical-binding:t; coding: utf-8-emacs; -*-
+;; --------------------------------------------------------------------------
+;; Desktop File for Emacs
+;; --------------------------------------------------------------------------
+;; Created Sat Nov 22 12:08:20 2025
+;; Desktop file format version 208
+;; Emacs version 29.3
+
+;; Global section:
+(setq desktop-saved-frameset [frameset 1 (26914 2596 566198 523000) (desktop . "208") "isay@desktop" nil nil ((((minibuffer . t) (undecorated) (override-redirect) (font . "-PfEd-DejaVu Sans Mono-regular-normal-normal-*-13-*-*-*-m-0-iso10646-1") (border-width . 0) (internal-border-width . 0) (child-frame-border-width) (right-divider-width . 0) (bottom-divider-width . 0) (vertical-scroll-bars . right) (horizontal-scroll-bars) (foreground-color . "#bbc2cf") (background-color . "#282c34") (mouse-color . "black") (border-color . "black") (screen-gamma) (line-spacing) (left-fringe . 8) (right-fringe . 8) (no-special-glyphs) (scroll-bar-foreground) (scroll-bar-background) (menu-bar-lines . 1) (tab-bar-lines . 0) (tool-bar-lines . 1) (title) (wait-for-wm . t) (tool-bar-position . top) (inhibit-double-buffering) (icon-type . t) (auto-raise) (auto-lower) (cursor-type . box) (scroll-bar-width . 16) (scroll-bar-height . 16) (alpha) (alpha-background) (no-focus-on-map) (no-accept-focus) (fullscreen . maximized) (visibility . t) (use-frame-synchronization) (skip-taskbar) (z-group) (display-type . color) (background-mode . dark) (cursor-color . "#51afef") (font-parameter) (sticky) (shaded) (environment) (dnd-root-window-position) (last-focus-update . t) (lsp-ui-doc-buffer . "Unprintable entity") (frameset--id . "760B-C66B-93AA-A4CC") (frameset--mini t . t) (height . 54) (width . 236) (modeline . t) (unsplittable) (left . 0) (top . 0) (icon-name) (display . ":0") (explicit-name)) ((min-height . 12) (min-width . 20) (min-height-ignore . 6) (min-width-ignore . 12) (min-height-safe . 3) (min-width-safe . 4) (min-pixel-height . 204) (min-pixel-width . 160) (min-pixel-height-ignore . 102) (min-pixel-width-ignore . 96) (min-pixel-height-safe . 51) (min-pixel-width-safe . 32)) hc (pixel-width . 1920) (pixel-height . 915) (total-width . 240) (total-height . 54) (normal-height . 1.0) (normal-width . 1.0) (combination-limit) (leaf (pixel-width . 960) (pixel-height . 915) (total-width . 120) (total-height . 54) (normal-height . 1.0) (normal-width . 0.5) (buffer "proxy_server.go" (selected) (hscroll . 0) (fringes 8 8 nil nil) (margins nil) (scroll-bars nil 2 t nil 0 t nil) (vscroll . 0) (dedicated) (point . 2991) (start . 2665)) (prev-buffers ("emacs_notes" 1 898) ("merge_edit.js" 1 619) ("merge.js" 24998 25706) ("fromTextArea.js" 1 185) ("modes.js" 1417 2385) ("proxy_server.go" 1689 1989) ("main.tf" 396 777) ("test.py" 1 167) ("remote_server" 1 201) ("project" 1 160) ("*GNU Emacs*" 1 77) ("*scratch*" 1 146))) (vc (last . t) (pixel-width . 960) (pixel-height . 915) (total-width . 120) (total-height . 54) (normal-height . 1.0) (normal-width . 0.5) (combination-limit) (leaf (pixel-width . 960) (pixel-height . 456) (total-width . 120) (total-height . 27) (normal-height . 0.5) (normal-width . 1.0) (buffer ".emacs" (selected . t) (hscroll . 0) (fringes 8 8 nil nil) (margins nil) (scroll-bars nil 2 t nil 0 t nil) (vscroll . 0) (dedicated) (point . 7901) (start . 7780)) (prev-buffers ("common_commandsAndNotes" 352 1202) (".emacs" 7287 7954) ("emacs_notes" 294 899) ("*grep*" 1 1) ("*grep </home/isay/code-mirror/>*" 1 2212) ("*grep </home/isay/project/proxy_server_project/>*" 1 2455) ("*Python*" 1320 1610))) (leaf (pixel-width . 960) (pixel-height . 221) (total-width . 120) (total-height . 13) (normal-height . 0.25) (normal-width . 1.0) (buffer "*terminal*" (selected) (hscroll . 0) (fringes 8 8 nil nil) (margins nil) (scroll-bars nil 2 t nil 0 t nil) (vscroll . 0) (dedicated) (point . 598) (start . 375)) (prev-buffers ("Remote_shell" 46 652) (".emacs" 7198 7643))) (leaf (last . t) (pixel-width . 960) (pixel-height . 238) (total-width . 120) (total-height . 14) (normal-height . 0.25) (normal-width . 1.0) (buffer "local_shell" (selected) (hscroll . 0) (fringes 8 8 nil nil) (margins nil) (scroll-bars nil 2 t nil 0 t nil) (vscroll . 0) (dedicated) (point . 908) (start . 733)) (prev-buffers ("Host_shell" 1 1) ("NOTES" 1 125) ("Remote_shell" 46 652))))))])
+(setq desktop-missing-file-warning nil)
+(setq tags-file-name nil)
+(setq tags-table-list nil)
+(setq search-ring '(#("copyOb" 0 6 (isearch-case-fold-search nil isearch-regexp-function nil)) #("resolveMode" 0 11 (isearch-case-fold-search nil isearch-regexp-function nil)) #("lsp" 0 3 (isearch-case-fold-search t isearch-regexp-function nil))))
+(setq regexp-search-ring nil)
+(setq register-alist nil)
+(setq file-name-history '("/home/isay/emacs_config_repo" "/home/isay/notes/misc" "/home/isay/notes/NOTES" "/home/isay/.emacs" "/home/isay/code-mirror/addon/merge/merge_edit.js" "/home/isay/project/test_python/test.py" "/home/isay/project/test_python" "/home/isay/project/proxy_server_project/remote_server/" "/home/isay/project/" "/home/isay/project/+" "/home/isay/project/+test_python" "/home/isay/project/test_python" "~/.emacs" "~/project/proxy_server_project/remote_server/proxy_server.go" "~/project/proxy_server_project/Dockerfile" "~/project/proxy_server_project/go_test/local_proxy.go" "~/notes/emacs_notes" "~/notes/NOTES" "~/project/proxy_server_project/local_server/host_server.go" "~/project/proxy_server_project/common_commandsAndNotes" "~/project/proxy_server_project/project" "~/emacs_config_repo/initial_setup_script.sh" "~/project/proxy_server_project/ec2_instance/ec2.tf" "~/emacs_config_repo+" "~/code-mirror/src/modes.js" "~/emacs_config_repo/.emacs" "~/project/proxy_server_project/ec2_instance/main.tf" "~/project/proxy_server_project/ec2_instance/security_groups.tf" "~/project/proxy_server_project/temp_data.sh" "~/emacs_config_repo/.gitignore" "~/push_emacs_config.sh" "~/project/proxy_server_project/.gitignore"))
+
+;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 208
+  "/home/isay/.emacs"
+  ".emacs"
+  'emacs-lisp-mode
+  '(company-mode font-lock-mode eldoc-mode display-line-numbers-mode flycheck-mode)
+  7901
+  '(7994 nil)
+  nil
+  nil
+  '((buffer-display-time 26914 2564 743878 252000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring (7973 7957 7723 7779 5971 6154 5985 1 7780 7722 7957 7972 7994 7994 7994 7901))))
+
+(desktop-create-buffer 208
+  "/home/isay/project/proxy_server_project/common_commandsAndNotes"
+  "common_commandsAndNotes"
+  'org-mode
+  '(font-lock-mode display-line-numbers-mode company-mode flycheck-mode)
+  1202
+  '(1379 nil)
+  nil
+  nil
+  '((buffer-display-time 26914 2422 219405 684000) (buffer-file-coding-system . undecided-unix) (truncate-lines . t))
+  '((mark-ring (1202))))
+
+(desktop-create-buffer 208
+  "/home/isay/project/proxy_server_project/remote_server/proxy_server.go"
+  "proxy_server.go"
+  'go-mode
+  '(company-mode font-lock-mode display-line-numbers-mode flycheck-mode)
+  2991
+  '(1 nil)
+  nil
+  nil
+  '((tab-width . 4) (indent-tabs-mode . t) (buffer-display-time 26914 2564 743877 373000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring (3085 1 2151 1 2584 650 1 1989 1392 2974 1 3085 3077 1 3085 1))))
+
+(desktop-create-buffer 208
+  "/home/isay/notes/emacs_notes"
+  "emacs_notes"
+  'org-mode
+  '(font-lock-mode display-line-numbers-mode company-mode flycheck-mode)
+  899
+  '(520 nil)
+  nil
+  nil
+  '((buffer-display-time 26914 2048 69797 213000) (buffer-file-coding-system . utf-8-unix) (truncate-lines . t))
+  '((mark-ring (901 399 901 899 334 434 898))))
+
+(desktop-create-buffer 208
+  "/home/isay/notes/misc"
+  "Host_shell"
+  'fundamental-mode
+  '(font-lock-mode display-line-numbers-mode company-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-display-time 26914 1672 988894 462000))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/isay/notes/NOTES"
+  "NOTES"
+  'fundamental-mode
+  '(font-lock-mode display-line-numbers-mode company-mode)
+  125
+  '(nil nil)
+  nil
+  nil
+  '((buffer-display-time 26914 1637 58780 970000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/isay/code-mirror/addon/merge/merge_edit.js"
+  "merge_edit.js"
+  'js-mode
+  '(font-lock-mode display-line-numbers-mode company-mode flycheck-mode)
+  619
+  '(268 nil)
+  nil
+  nil
+  '((buffer-display-time 26913 64620 780690 574000) (buffer-file-coding-system . utf-8-unix))
+  '((mark-ring (28 28 1 540 28 619))))
+
+(desktop-create-buffer 208
+  "/home/isay/code-mirror/addon/merge/merge.js"
+  "merge.js"
+  'js-mode
+  '(font-lock-mode display-line-numbers-mode company-mode flycheck-mode)
+  25706
+  '(25074 nil)
+  nil
+  nil
+  '((buffer-display-time 26913 64421 934282 497000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring (22672))))
+
+(desktop-create-buffer 208
+  "/home/isay/code-mirror/src/edit/fromTextArea.js"
+  "fromTextArea.js"
+  'js-mode
+  '(font-lock-mode display-line-numbers-mode company-mode flycheck-mode)
+  185
+  '(158 nil)
+  nil
+  nil
+  '((buffer-display-time 26913 64349 621788 936000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/isay/code-mirror/src/modes.js"
+  "modes.js"
+  'js-mode
+  '(font-lock-mode display-line-numbers-mode company-mode flycheck-mode)
+  2385
+  '(2412 nil)
+  nil
+  nil
+  '((buffer-display-time 26913 64296 783610 276000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring (1 3175 1467 2083 1 1 1))))
+
+(desktop-create-buffer 208
+  "/home/isay/project/proxy_server_project/ec2_instance/main.tf"
+  "main.tf"
+  'terraform-mode
+  '(company-mode lsp-completion-mode flycheck-mode lsp-diagnostics-mode lsp-headerline-breadcrumb-mode lsp-modeline-code-actions-mode lsp-modeline-diagnostics-mode lsp-modeline-workspace-status-mode lsp-lens-mode lsp-ui-doc-mode lsp-ui-sideline-mode lsp-ui-mode eldoc-mode lsp-managed-mode lsp-mode font-lock-mode display-line-numbers-mode terraform-format-on-save-mode)
+  777
+  '(937 nil)
+  nil
+  nil
+  '((buffer-display-time 26913 63752 195810 114000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/isay/project/test_python/test.py"
+  "test.py"
+  'python-mode
+  '(font-lock-mode display-line-numbers-mode lsp-ui-doc-mode lsp-ui-sideline-mode lsp-ui-mode lsp-mode company-mode lsp-completion-mode flycheck-mode lsp-diagnostics-mode lsp-headerline-breadcrumb-mode lsp-modeline-code-actions-mode lsp-modeline-diagnostics-mode lsp-modeline-workspace-status-mode lsp-lens-mode eldoc-mode lsp-managed-mode)
+  167
+  '(1 nil)
+  nil
+  nil
+  '((tab-width . 8) (indent-tabs-mode) (buffer-display-time 26913 63691 519402 720000) (buffer-file-coding-system . utf-8-unix))
+  '((mark-ring (167 1 167 1 167 1 167 1 167 1 167 1 167 1 167 1))))
+
+(desktop-create-buffer 208
+  nil
+  "remote_server"
+  'dired-mode
+  '(company-mode font-lock-mode display-line-numbers-mode)
+  201
+  '(nil nil)
+  t
+  '("/home/isay/project/proxy_server_project/remote_server/")
+  '((buffer-display-time 26913 62170 712309 934000))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  nil
+  "project"
+  'dired-mode
+  '(company-mode font-lock-mode display-line-numbers-mode)
+  160
+  '(nil nil)
+  t
+  '("/home/isay/project/")
+  '((buffer-display-time 26913 62139 188623 153000))
+  '((mark-ring nil)))
+

@@ -128,6 +128,20 @@
   :ensure t
   :hook (terraform-mode . company-mode))
 
+;; For Golang auto completion
+(use-package company
+  :ensure t
+  :hook (go-mode . company-mode))
+
+(use-package company-go
+  :after company
+  :hook (go-mode . (lambda ()
+                     (set (make-local-variable 'company-backends) '(company-go)))))
+
+(use-package company
+  :config
+  (global-company-mode)
+  (setq company-backends '(company-capf)))
 
 ;; Flycheck is the newer version of flymake and is needed to make lsp-mode not freak out.
 (use-package flycheck
@@ -149,7 +163,7 @@
   :config
   (setq lsp-terraform-ls-prefill-required-fields t))
 
-
+;; terraform lsp support
 (use-package lsp-mode
   :ensure t
   :commands lsp
@@ -162,6 +176,24 @@
   :hook ((terraform-mode . terraform-format-on-save-mode)) ; Automatically format on save
   :config
   )
+
+
+;;for golang
+(use-package lsp-mode
+  :hook ((go-mode . lsp))
+  :commands lsp)
+
+
+;;For Python
+(use-package lsp-mode
+  :hook ((python-mode . lsp))
+  :commands lsp)
+
+(use-package company
+  :config
+  (global-company-mode)
+  (setq company-backends '(company-capf)))
+
 
 
 (use-package lsp-ui
@@ -199,6 +231,12 @@
 ;;   (define-key vterm-mode-map (kbd "C-x b") #'switch-to-buffer)
 ;;   (define-key vterm-mode-map (kbd "C-x o") #'other-window))
 
+(add-to-list 'load-path "/home/isay/.emacs.d/elpa/dockerfile-mode/dockerfile-mode.el")
+(require 'dockerfile-mode)
+(add-to-list 'auto-mode-alist '("Dockerfile\\'" . dockerfile-mode))
+
+
+
 (defun google-search (query)
   "Search Google for QUERY."
   (interactive "sGoogle: ")
@@ -219,3 +257,15 @@
 
 (global-font-lock-mode 1)
 
+;;Function for switching to different windows backwards
+(defun other-window-backward ()
+  "Move to previous window"
+  (interactive)
+  (other-window -1))
+
+;;Other window Binding
+(global-set-key (kbd "C-x O") 'other-window-backward)
+
+
+(winner-mode 1)
+(desktop-save-mode 1)
