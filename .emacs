@@ -2,6 +2,11 @@
 (global-display-line-numbers-mode)
 (setq display-line-numbers-type 'relative)
 
+;; increase horizontal divider size because otherwise it's too thin to adjust buffer widths with the mouse
+(setq window-divider-default-right-width 6)
+(window-divider-mode 1)
+
+
 (require 'package)
 
 ;; Nice macro for updating lists in place.
@@ -16,6 +21,19 @@
                   ("org-elpa" . "https://orgmode.org/elpa/"))) ;; Org packages, I don't use org but seems like a harmless default
 
 (package-initialize)
+
+
+;;ORG-MODE STUFF
+
+;; Pretty bullets
+(use-package org-superstar
+  :hook (org-mode . org-superstar-mode))
+
+;; Org-mode images rendering
+(setq org-startup-with-inline-images t)
+(setq org-image-actual-width nil) ;; allows #+attr_org :width to work
+
+
 
 ;; Ensure use-package is present. From here on out, all packages are loaded
 ;; with use-package, a macro for importing and installing packages. Also, refresh the package archive on load so we can pull the latest packages.
@@ -231,9 +249,9 @@
 ;;   (define-key vterm-mode-map (kbd "C-x b") #'switch-to-buffer)
 ;;   (define-key vterm-mode-map (kbd "C-x o") #'other-window))
 
-(add-to-list 'load-path "/home/isay/.emacs.d/elpa/dockerfile-mode/dockerfile-mode.el")
-(require 'dockerfile-mode)
-(add-to-list 'auto-mode-alist '("Dockerfile\\'" . dockerfile-mode))
+;; (add-to-list 'load-path "/home/.emacs.d/elpa/dockerfile-mode/dockerfile-mode.el")
+;; (require 'dockerfile-mode)
+;; (add-to-list 'auto-mode-alist '("Dockerfile\\'" . dockerfile-mode))
 
 
 
@@ -242,14 +260,6 @@
   (interactive "sGoogle: ")
   (browse-url (concat "https://www.google.com/search?q=" (url-hexify-string query))))
 (global-set-key (kbd "C-c g") 'google-search)
-
-;; (use-package engine-mode
-;;   :ensure t
-;;   :config
-;;   (engine-mode t)
-;;   (defengine google
-;;     "https://www.google.com/search?q=%s"
-;;     :keybinding "g"))
 
 
 ;; tab/untab key bindings
@@ -262,7 +272,7 @@
 
 
 
-(global-font-lock-mode 1)
+;; FUNCTIONS ;;
 
 ;;Function for switching to different windows backwards
 (defun other-window-backward ()
@@ -272,3 +282,14 @@
 
 ;;Other window Binding
 (global-set-key (kbd "C-x O") 'other-window-backward)
+
+;; FIX FOR SYNTAX COLORING
+(global-font-lock-mode 1)
+
+(global-set-key (kbd "C-%") 'replace-string)
+
+(defun splunk-or (beg end)
+  (interactive "r")
+  (save-excursion
+    (replace-regexp "\n" "\" OR \"\
+" nil beg end)))
