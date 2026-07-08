@@ -34,6 +34,11 @@
 (setq org-image-actual-width nil) ;; allows #+attr_org :width to work
 
 
+(global-set-key (kbd "C-c l") #'org-store-link)
+(global-set-key (kbd "C-c a") #'org-agenda)
+(global-set-key (kbd "C-c c") #'org-capture)
+
+
 
 ;; Ensure use-package is present. From here on out, all packages are loaded
 ;; with use-package, a macro for importing and installing packages. Also, refresh the package archive on load so we can pull the latest packages.
@@ -242,34 +247,12 @@
 (use-package vterm
   :ensure t)
 
-;; (use-package vterm
-;;   :ensure t
-;;   :config
-;;   ;; Bindings inside vterm
-;;   (define-key vterm-mode-map (kbd "C-x b") #'switch-to-buffer)
-;;   (define-key vterm-mode-map (kbd "C-x o") #'other-window))
-
-;; (add-to-list 'load-path "/home/.emacs.d/elpa/dockerfile-mode/dockerfile-mode.el")
-;; (require 'dockerfile-mode)
-;; (add-to-list 'auto-mode-alist '("Dockerfile\\'" . dockerfile-mode))
-
-
 
 (defun google-search (query)
   "Search Google for QUERY."
   (interactive "sGoogle: ")
   (browse-url (concat "https://www.google.com/search?q=" (url-hexify-string query))))
 (global-set-key (kbd "C-c g") 'google-search)
-
-
-;; tab/untab key bindings
-(global-set-key (kbd "C-c <") 'indent-rigidly-left-to-tab-stop)
-(global-set-key (kbd "C-c >") 'indent-rigidly-right-to-tab-stop)
-
-;;Comment/uncomment region key bindings
-(global-set-key (kbd "C-c /") 'comment-region)
-(global-set-key (kbd "C-c ?") 'uncomment-region)
-
 
 
 ;; FUNCTIONS ;;
@@ -279,9 +262,6 @@
   "Move to previous window"
   (interactive)
   (other-window -1))
-
-;;Other window Binding
-(global-set-key (kbd "C-x O") 'other-window-backward)
 
 ;; FIX FOR SYNTAX COLORING
 (global-font-lock-mode 1)
@@ -293,3 +273,15 @@
   (save-excursion
     (replace-regexp "\n" "\" OR \"\
 " nil beg end)))
+
+;; BINDINGS
+
+;; set redo binding
+(global-set-key (kbd "C-c r") #'undo-redo)
+
+;;Comment/uncomment region key bindings
+(global-set-key (kbd "C-c /") 'comment-region)
+(global-set-key (kbd "C-c ?") 'uncomment-region)
+
+;;Other window Binding
+(global-set-key (kbd "C-x O") 'other-window-backward)
