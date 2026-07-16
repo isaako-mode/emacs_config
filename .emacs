@@ -39,6 +39,12 @@
 (global-set-key (kbd "C-c c") #'org-capture)
 
 
+;; REGEX CONFIG
+(use-package visual-regexp)
+
+(use-package visual-regexp-steroids
+  :after visual-regexp)
+
 
 ;; Ensure use-package is present. From here on out, all packages are loaded
 ;; with use-package, a macro for importing and installing packages. Also, refresh the package archive on load so we can pull the latest packages.
@@ -285,3 +291,6 @@
 
 ;;Other window Binding
 (global-set-key (kbd "C-x O") 'other-window-backward)
+
+;;Replace regex binding
+(global-set-key (kbd "C-c s") 'vr/replace)
