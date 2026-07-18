@@ -1,4 +1,13 @@
 
+
+;;IMPORT LOCAL FILES
+
+(let ((local-config (expand-file-name "local.el" user-emacs-directory)))
+(when (file-exists-p local-config)
+    (load local-config)))
+
+
+
 (global-display-line-numbers-mode)
 (setq display-line-numbers-type 'relative)
 
@@ -39,11 +48,32 @@
 (global-set-key (kbd "C-c c") #'org-capture)
 
 
+;;For reading html emails in org-mode
+(use-package org-msg
+  :after mu4e
+  :config
+  (setq mail-user-agent 'mu4e-user-agent)
+  (require 'org-msg)
+  (setq org-msg-options "html-postamble:nil H:5 num:nil ^:{} toc:nil author:nil email:nil \\n:t"
+      org-msg-startup "hidestars indent inlineimages"
+      org-msg-default-alternatives '((new		. (text html))
+                                     (reply-to-html	. (text html))
+                                     (reply-to-text	. (text)))
+      org-msg-convert-citation t))
+
+
+
+
+
+
 ;; REGEX CONFIG
 (use-package visual-regexp)
 
 (use-package visual-regexp-steroids
   :after visual-regexp)
+
+
+
 
 
 ;; Ensure use-package is present. From here on out, all packages are loaded
@@ -294,3 +324,7 @@
 
 ;;Replace regex binding
 (global-set-key (kbd "C-c s") 'vr/replace)
+
+;;Delete-duplicate-lines
+(global-set-key (kbd "C-c d d") 'delete-duplicate-lines)
+
